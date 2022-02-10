@@ -7,7 +7,6 @@ try {
     const products = data
     .map((product) => {
         const {
-        image: { url },
         name,
         price,
         } = product
