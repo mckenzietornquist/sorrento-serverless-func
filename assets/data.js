@@ -1,7 +1,7 @@
 const items = [
   {
-    id: 'recmg2a1ctaEJNZhu',
-    name: 'utopia sofa',
+    id: '1',
+    name: 'Face Mask',
     image: {
       url:
         'https://dl.airtable.com/.attachments/6ac7f7b55d505057317534722e5a9f03/9183491e/product-3.jpg',
