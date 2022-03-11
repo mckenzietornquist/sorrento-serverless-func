@@ -8,11 +8,11 @@ const fetchProduct = async () => {
     const {
     data: { fields },
     } = await axios.get(`/api/3-z-complete${id}`)
-    const { name, price, description, image, colors, category} = fields
+    const { name, price, description, img, colors, category} = fields
     result.innerHTML = `<h1 class="title">${name}</h1>
   <article class="product">
     <img class="product-img"
-    src="${image[0].url}"
+    src="${img[0].url}"
     alt="${name}"
     />
     <div class="product-info">
