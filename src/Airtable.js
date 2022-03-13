@@ -25,10 +25,10 @@ const Airtable = () => {
       </div>
       <div className='products'>
         {products.map((product) => {
-          const { id, url, price, name } = product
+          const { id, image, price, name } = product
           return (
             <Link to={`/${id}`} className='product' key={id}>
-              <img src={url} alt={name} />
+              <img src={image} alt={name} />
               <div className='info'>
                 <h5>{name}</h5>
                 <h5 className='price'>${price}</h5>
