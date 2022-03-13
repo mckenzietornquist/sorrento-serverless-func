@@ -9,7 +9,10 @@ exports.handler = async (event, context, cb) => {
   if (id) {
     try {
       const product = await airtable.retrieve(id)
-      if (product.error) {
+      const singleProduct = product.fields
+      const finalProduct = { id, ...singleProduct }
+
+      if (finalProduct.error) {
         return {
           statusCode: 404,
           body: `No product with id: ${id}`,
@@ -17,7 +20,7 @@ exports.handler = async (event, context, cb) => {
       }
       return {
         statusCode: 200,
-        body: JSON.stringify(product),
+        body: JSON.stringify(finalProduct),
       }
     } catch (error) {
       return {
