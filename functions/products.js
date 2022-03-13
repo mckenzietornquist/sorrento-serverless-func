@@ -10,20 +10,21 @@ exports.handler = async (event, context, cb) => {
   
   if (id) {
     try {
-      const product = await airtable.retrieve(id)
+      const product = await airtable.retrieve(id);
       if (product.error) {
         return {
           statusCode: 404,
           body: `No product with id: ${id}`,
-        }
+        };
       }
+      const formatProduct = { ig: product.id, ...product.fields };
       return {
         headers: {
           'Access-Control-Allow-Origin': '*',
         },
         statusCode: 200,
-        body: JSON.stringify(product),
-      }
+        body: JSON.stringify(formatProduct),
+      };
     } catch (error) {
       return {
         headers: {

@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 
 const Product = () => {
   const [loading, setLoading] = useState(true)
-  const [finalProduct, setProduct] = useState(null)
+  const [formatProduct, setProduct] = useState(null)
   const { productID } = useParams()
 
   const fetchData = async () => {
@@ -26,8 +26,8 @@ const Product = () => {
       </section>
     )
   }
-  const { fields } = finalProduct
-  const { name, stock, description, price, images, colors, category } = fields
+
+  const { name, stock, description, price, images, colors, category } = formatProduct;
 
   return (
     <section className='section section-center'>
