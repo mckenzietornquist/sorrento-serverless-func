@@ -12,6 +12,9 @@ exports.handler = async (event, context, cb) => {
       const product = await airtable.retrieve(id)
       if (product.error) {
         return {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+          },
           statusCode: 404,
           body: `No product with id: ${id}`,
         }
@@ -37,9 +40,9 @@ exports.handler = async (event, context, cb) => {
     const { records } = await airtable.list()
     const products = records.map((product) => {
       const { id } = product
-      const { name, img, price } = product.fields
+      const { name, price, img, colors, description, category } = product.fields
       const image = img[0].url
-      return { id, name, image, price }
+      return { id,name, price, image, colors, description, category }
     })
     return {
       headers: {
