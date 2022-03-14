@@ -27,7 +27,7 @@ const Product = () => {
     )
   }
 
-  const { name, stock, description, price, images, colors, category } = formatProduct;
+  const { name, stock, description, price, images, colors, category, featured } = formatProduct;
 
   return (
     <section className='section section-center'>
@@ -43,6 +43,7 @@ const Product = () => {
           <div>
             <h5>{stock}</h5>
             <h5 className='price'>${price}</h5>
+            <h5>{featured}</h5>
             <h5>{colors}</h5>
             <h5>{category}</h5>
             <h5>{name}</h5>
