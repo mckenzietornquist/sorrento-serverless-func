@@ -17,7 +17,7 @@ exports.handler = async (event, context, cb) => {
           body: `No product with id: ${id}`,
         };
       }
-      const formatProduct = { ig: product.id, ...product.fields };
+      const formatProduct = { id: product.id, ...product.fields };
       return {
         headers: {
           'Access-Control-Allow-Origin': '*',
