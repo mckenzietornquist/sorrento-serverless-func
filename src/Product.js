@@ -27,7 +27,7 @@ const Product = () => {
     )
   }
 
-  const { name, stock, description, price, images, colors, category, featured } = formatProduct;
+  const { stock, price, featured, colors, category, images,  name, description } = formatProduct;
 
   return (
     <section className='section section-center'>
