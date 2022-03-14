@@ -39,8 +39,7 @@ const Product = () => {
           <div className='title-underline'></div>
         </div>
         <article className='single-product'>
-          <img className='single-product-img' src={images[0].url} alt={name} />
-          <div>
+        <img src={images} alt={name} />
             <h5>{stock}</h5>
             <h5 className='price'>${price}</h5>
             <h5>{featured}</h5>
